@@ -1,14 +1,4 @@
-const languages = {
-  ru: {
-    path: 'ru',
-    title: 'Русский',
-    default: true,
-  },
-  en: {
-    path: 'en',
-    title: 'English',
-  }
-}
+const languages = require('./src/locales/languages.json');
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions

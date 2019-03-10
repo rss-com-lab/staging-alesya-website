@@ -1,0 +1,11 @@
+{
+  "ru": {
+    "path": "ru",
+    "title": "Русский"
+  },
+  "en": {
+    "path": "en",
+    "title": "English",
+    "default": true
+  }
+}
