@@ -9,12 +9,12 @@ import './layout.scss';
 import styles from './layout.module.scss'
 
 const Layout = ({ children, path }) => (
-  <React.Fragment>
+  <div className={styles.wrapper}>
     <TopLine path={path} parentStyles={styles} /> 
     <Header parentStyles={styles} />
     <main className={[styles.container, styles.main].join(' ')}>{children}</main>
     <Footer parentStyles={styles} />
-  </React.Fragment>
+  </div>
 )
 
 Layout.propTypes = {
