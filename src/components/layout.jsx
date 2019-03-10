@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { useTranslation } from 'react-i18next';
 
 import Header from './header';
 import './i18next';
-import './layout.css';  
+import './layout.scss';  
 
 const Layout = ({ children, path }) => {
   return (
