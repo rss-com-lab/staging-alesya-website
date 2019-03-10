@@ -1,10 +1,10 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
-import LanguageSelector from './language-selector';
-import LocalizedLink from './localized-link';
+import LocalizedLink from '../localized-link';
 
-const Header = ({ path }) => {
+const Header = ({ parentStyles = {} }) => {
   const { t } = useTranslation();
 
   return (
@@ -14,13 +14,7 @@ const Header = ({ path }) => {
         marginBottom: `1.45rem`,
       }}
     >
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.45rem 1.0875rem`,
-        }}
-      >
+      <div className={parentStyles.container}>
         <h1 style={{ margin: 0 }}>
           <LocalizedLink
             to="/"
@@ -32,10 +26,13 @@ const Header = ({ path }) => {
             {t('test')}
           </LocalizedLink>
         </h1>
-        <LanguageSelector path={path} />
       </div>
     </header>
   )
+}
+
+Header.propTypes = {
+  parentStyles: PropTypes.objectOf(PropTypes.string),
 }
 
 export default Header
