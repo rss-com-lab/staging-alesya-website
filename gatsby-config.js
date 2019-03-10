@@ -30,7 +30,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Anaheim']
+          families: ['Roboto']
         }
       }
     },
