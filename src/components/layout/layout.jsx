@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import TopLine from '../top-line/top-line';
 import Header from '../header/header';
-import Footer from '../footer';
+import Footer from '../footer/footer';
 import '../i18next';
 import './layout.scss';  
 import styles from './layout.module.scss'
@@ -12,7 +12,7 @@ const Layout = ({ children, path }) => (
   <React.Fragment>
     <TopLine path={path} parentStyles={styles} /> 
     <Header parentStyles={styles} />
-    <main className={styles.container}>{children}</main>
+    <main className={[styles.container, styles.main].join(' ')}>{children}</main>
     <Footer parentStyles={styles} />
   </React.Fragment>
 )
