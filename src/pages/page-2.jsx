@@ -1,7 +1,7 @@
 import React from "react";
 import { withTranslation } from 'react-i18next';
 
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 import LocalizedLink from '../components/localized-link';
 
 const SecondPage = ({ pathContext, t, i18n }) => {
