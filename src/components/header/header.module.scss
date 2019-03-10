@@ -1,0 +1,47 @@
+$accent: #45a9f6;
+$main-bg-color: #2d3133;
+$light-bg-color: #424648;
+
+
+.header {
+  background: linear-gradient(to bottom, $main-bg-color calc(100% - 10px), $light-bg-color 100%);
+  border-bottom: 10px solid $main-bg-color;
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  h2 {
+    padding-top: 15px;
+    float: left;
+    font-size: 3rem;
+  }
+
+  ul {
+    margin: 0 0 0 25px;
+    text-decoration: none;
+    text-align: right;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0;
+    padding: 0 5px;
+    text-transform: uppercase;
+    line-height: 1;
+
+    a {
+      padding: 30px 10px 25px;
+      display: inline-block;
+      border-bottom: 5px solid transparent;
+      font-weight: bold;
+      transition: all 1s;
+
+      &:hover, &.active {
+        border-bottom-color: $accent;
+        color: $accent;
+      }
+    }
+  }
+}
