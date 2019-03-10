@@ -14,14 +14,14 @@ $light-bg-color: #424648;
 
   h2 {
     padding-top: 15px;
-    float: left;
     font-size: 3rem;
+    text-align: center;
   }
 
   ul {
-    margin: 0 0 0 25px;
+    margin: 20px 0 0 0;
     text-decoration: none;
-    text-align: right;
+    text-align: center;
   }
 
   li {
@@ -32,16 +32,47 @@ $light-bg-color: #424648;
     line-height: 1;
 
     a {
-      padding: 30px 10px 25px;
       display: inline-block;
       border-bottom: 5px solid transparent;
-      font-weight: bold;
+      font-weight: 400;
+      font-size: 1rem *13/14;
       transition: all 1s;
 
       &:hover, &.active {
+        padding: 10px 0px;
         border-bottom-color: $accent;
         color: $accent;
       }
     }
+  }
+}
+
+@media screen and (min-width: 670px) {
+  .header {
+    h2 {
+      float: left;
+    }
+
+    ul {
+      margin-left: 45px;
+      text-align: right;
+    }
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .header {
+    ul {
+      margin-top: 0;
+    }
+    li a {
+      padding: 30px 10px 25px;
+    }
+  }
+}
+
+@media screen and (min-width: 330px) {
+  .header li a {
+    font-size: 1rem;
   }
 }
