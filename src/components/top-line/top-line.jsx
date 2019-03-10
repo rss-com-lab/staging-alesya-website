@@ -2,11 +2,15 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 import LanguageSelector from '../language-selector/language-selector';
+import styles from './top-line.module.scss';
 
 const TopLine = ({ path, parentStyles = {} }) => {
   return (
-    <div className={parentStyles.container}>
-      <LanguageSelector path={path} />
+    <div className={styles.topLine}>
+      <div className={parentStyles.container}>
+        <div className={styles.links}>Links</div>
+        <LanguageSelector path={path} />
+      </div>
     </div>
   )
 }
