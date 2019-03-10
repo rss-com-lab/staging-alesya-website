@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-import LanguageSelector from '../language-selector';
+import LanguageSelector from '../language-selector/language-selector';
 
 const TopLine = ({ path, parentStyles = {} }) => {
   return (
