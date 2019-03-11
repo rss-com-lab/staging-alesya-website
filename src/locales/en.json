@@ -9,5 +9,16 @@
   "footer": {
     "name": "Alesia Ivankova",
     "All Rights Reserved": "All Rights Reserved"
+  },
+  "contact-form": {
+    "Contact": "Contact",
+    "Indicates required field": "Indicates required field",
+    "Name": "Name",
+    "First": "First",
+    "Last": "Last",
+    "Email": "Email",
+    "Theme": "Theme",
+    "Text": "Text",
+    "Submit": "Submit"
   }
 }
