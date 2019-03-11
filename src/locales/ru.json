@@ -9,5 +9,16 @@
   "footer": {
     "name": "Алеся Иванькова",
     "All Rights Reserved": "Все права защищены"
+  },
+  "contact-form": {
+    "Contact": "Связаться",
+    "Indicates required field": "Поле, обязательное для заполнения",
+    "Name": "Имя",
+    "First": "Имя",
+    "Last": "Фамилия",
+    "Email": "Email",
+    "Theme": "Тема",
+    "Text": "Текст",
+    "Submit": "Отправить"
   }
 }
