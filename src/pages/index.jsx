@@ -2,7 +2,8 @@ import React from "react";
 import { graphql } from 'gatsby';
 import { withTranslation } from 'react-i18next';
 
-import Layout from "../components/layout/layout";
+import Layout from '../components/layout/layout';
+import styles from './index.module.scss';
 
 const IndexPage = ({ pathContext, i18n, data }) => {
   if (i18n.language !== pathContext.locale) i18n.changeLanguage(pathContext.locale);
@@ -19,6 +20,7 @@ const IndexPage = ({ pathContext, i18n, data }) => {
   return (
     <Layout path={pathContext.pathname}>
       <div 
+        className={styles.wrapper}
         dangerouslySetInnerHTML={{ __html: photoHTML + pageData.text.childMarkdownRemark.html }}
       ></div>
     </Layout>

@@ -1,0 +1,15 @@
+.wrapper {
+  font-size: 1rem * 18/14;
+
+  img {
+    float: left;
+    max-width: 300px;
+    margin: 0 10px 10px 0;  
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .wrapper img {
+    max-width: 100%;
+  }
+}
