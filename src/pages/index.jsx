@@ -1,11 +1,12 @@
 import React from "react";
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 
 import Layout from '../components/layout/layout';
 import styles from './index.module.scss';
 
-const IndexPage = ({ pathContext, i18n, data }) => {
+const IndexPage = ({ pathContext, i18n, t, data }) => {
   if (i18n.language !== pathContext.locale) i18n.changeLanguage(pathContext.locale);
 
   const pageData = data.allContentfulPage.edges
@@ -19,6 +20,9 @@ const IndexPage = ({ pathContext, i18n, data }) => {
 
   return (
     <Layout path={pathContext.pathname}>
+      <Helmet>
+        <title>{`${pageData.title} – ${t('title')}`}</title>
+      </Helmet>
       <div 
         className={styles.wrapper}
         dangerouslySetInnerHTML={{ __html: photoHTML + pageData.text.childMarkdownRemark.html }}
@@ -27,7 +31,7 @@ const IndexPage = ({ pathContext, i18n, data }) => {
   )
 }
 
-export default withTranslation()(IndexPage);
+export default withTranslation('header')(IndexPage);
 
 export const pageQuery = graphql`
   {
