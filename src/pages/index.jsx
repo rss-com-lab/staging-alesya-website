@@ -10,9 +10,17 @@ const IndexPage = ({ pathContext, i18n, data }) => {
   const pageData = data.allContentfulPage.edges
     .filter(item => item.node.node_locale === pathContext.locale)[0].node;
 
+  const { photo } = pageData;
+
+  const photoHTML = `<img src="${photo.resolutions.src}" alt="${photo.title}" />`
+
+  console.log(photoHTML);
+
   return (
     <Layout path={pathContext.pathname}>
-      <div dangerouslySetInnerHTML={{ __html: pageData.text.childMarkdownRemark.html }}></div>
+      <div 
+        dangerouslySetInnerHTML={{ __html: photoHTML + pageData.text.childMarkdownRemark.html }}
+      ></div>
     </Layout>
   )
 }
@@ -29,6 +37,12 @@ export const pageQuery = graphql`
           text {
             childMarkdownRemark {
               html
+            }
+          }
+          photo {
+            title
+            resolutions(width: 1600) {
+              src
             }
           }
         }
