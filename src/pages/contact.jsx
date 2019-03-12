@@ -17,16 +17,16 @@ const ContactPage = ({ pathContext, t, i18n }) => {
         <p className={styles.warning}><span className={styles.required}>*</span> {t('Indicates required field')}</p>
         <p>{t('Name')} <span className={styles.required}>*</span></p>
         <label className={styles.blocks}>
-          <input type="text" name="entry.2005620554" required/>
+          <input type="text" name="entry.2005620554" autoComplete="given-name" required/>
           <span className={styles.additionalLabel}>{t('First')}</span>
         </label>
         <label className={styles.blocks}>
-          <input type="text" name="entry.2097294058" required/>
+          <input type="text" name="entry.2097294058" autoComplete="family-name" required/>
           <span className={styles.additionalLabel}>{t('Last')}</span>
         </label>
 
         <label htmlFor="email"><p>{t('Email')} <span className={styles.required}>*</span></p></label>
-        <input type="email" id="email" name="entry.1045781291" required/>
+        <input type="email" id="email" autocomplete="email" name="entry.1045781291" required/>
 
         <label htmlFor="theme"><p>{t('Theme')} <span className={styles.required}>*</span></p></label>
         <input type="text" id="theme" name="entry.1883068248" required/>
