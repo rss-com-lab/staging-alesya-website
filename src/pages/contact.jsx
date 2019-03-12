@@ -26,10 +26,10 @@ const ContactPage = ({ pathContext, t, i18n }) => {
         </label>
 
         <label htmlFor="email"><p>{t('Email')} <span className={styles.required}>*</span></p></label>
-        <input type="email" id="email" autocomplete="email" name="entry.1045781291" required/>
+        <input type="email" id="email" autoComplete="email" name="entry.1045781291" required/>
 
-        <label htmlFor="theme"><p>{t('Theme')} <span className={styles.required}>*</span></p></label>
-        <input type="text" id="theme" name="entry.1883068248" required/>
+        <label htmlFor="subject"><p>{t('Subject')} <span className={styles.required}>*</span></p></label>
+        <input type="text" id="subject" name="entry.1883068248" required/>
 
         <label htmlFor="text"><p>{t('Text')} <span className={styles.required}>*</span></p></label>
         <textarea name="entry.839337160" id="text" required></textarea>
