@@ -1,0 +1,22 @@
+$border-color: #cccccc;
+
+.item {
+  padding: 10px;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid $border-color;
+
+  button {
+    background: transparent;
+    border: 0;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
