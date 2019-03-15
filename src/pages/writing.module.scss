@@ -1,0 +1,14 @@
+$border-color: #cccccc;
+
+@media screen and (min-width: 480px) {
+  .writing-wrapper {
+    display: flex;
+
+    aside {
+      padding-right: 20px;
+      margin-right: 20px;
+      border-right: 1px solid $border-color;
+      min-width: 200px;
+    }
+  }
+}
