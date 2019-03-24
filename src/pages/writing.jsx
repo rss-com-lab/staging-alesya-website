@@ -15,8 +15,6 @@ class WrirtingPage extends React.PureComponent {
       .filter(item => item.node.node_locale === props.pathContext.locale)
       .map(item => item.node);
 
-    console.log(writings);
-
     this.state = {
       writings,
       writing: writings.length ? writings[0] : null,
@@ -38,7 +36,11 @@ class WrirtingPage extends React.PureComponent {
     return <Layout path={pathContext.pathname}>
       <div className={styles.writingWrapper}>
         <aside>
-          <WritingsList writings={writings} writingChangeHolder={writing => this.writingChangeHolder(writing)} />
+          <WritingsList
+            writings={writings} 
+            writingChangeHolder={writing => this.writingChangeHolder(writing)}
+            writing={writing}
+          />
         </aside>
         {this.state.writing && <WritingBody writing={writing}/>}
       </div>

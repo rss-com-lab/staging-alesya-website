@@ -17,6 +17,11 @@ $border-color: #cccccc;
     &:active {
       color: inherit;
     }
+    &:disabled {
+      text-decoration: underline;
+      color: inherit;
+      cursor: default;
+    }
   }
 
   &:last-child {
