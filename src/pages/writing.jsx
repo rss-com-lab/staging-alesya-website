@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 
 import Layout from '../components/layout/layout';
@@ -14,7 +13,9 @@ class WrirtingPage extends React.PureComponent {
     
     const writings = props.data.allContentfulWriting.edges
       .filter(item => item.node.node_locale === props.pathContext.locale)
-      .map(item => item.node)
+      .map(item => item.node);
+
+    console.log(writings);
 
     this.state = {
       writings,
@@ -29,16 +30,13 @@ class WrirtingPage extends React.PureComponent {
   }
 
   render () {
-    const { pathContext, i18n, t } = this.props;
+    const { pathContext, i18n } = this.props;
     const { writings, writing } = this.state;
 
     if (i18n.language !== pathContext.locale) i18n.changeLanguage(pathContext.locale);
 
     return <Layout path={pathContext.pathname}>
       <div className={styles.writingWrapper}>
-        <Helmet>
-          <title>{`${t('Writing')} – ${t('title')}`}</title>
-        </Helmet>
         <aside>
           <WritingsList writings={writings} writingChangeHolder={writing => this.writingChangeHolder(writing)} />
         </aside>

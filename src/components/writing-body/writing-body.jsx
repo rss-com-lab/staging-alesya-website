@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
 import styles from './writing-body.module.scss';
@@ -14,6 +15,7 @@ const WritingBody = ({ writing }) => {
 
   return (
     <article className={styles.article}>
+      <Helmet title={`${writing.title} – ${t('header:title')}`}/>
       <header>
         <h1>{writing.title}</h1>
       </header>
