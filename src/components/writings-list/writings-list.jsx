@@ -5,7 +5,7 @@ import styles from './writings-list.module.scss';
 
 const WritingsList = ({ writings = [], writingChangeHolder }) => (
   <nav>
-    <ul class={styles.list}>
+    <ul className={styles.list}>
       {writings.map(item => <WritingsListItem
         key={`${item.title}/${item.node_locale}`}
         writingChangeHolder={writingChangeHolder} 
