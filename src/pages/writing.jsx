@@ -19,7 +19,7 @@ class WrirtingPage extends React.PureComponent {
 
     this.state = {
       writings,
-      writing: null,
+      writing: writings.length ? writings[0] : null,
     };
   }
 
