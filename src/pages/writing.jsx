@@ -52,7 +52,12 @@ export default withTranslation('header')(WrirtingPage);
 
 export const pageQuery = graphql`
   {
-    allContentfulWriting {
+    allContentfulWriting(
+      sort: {
+        fields: [date, createdAt]
+        order: DESC
+      }
+    ) {
       edges {
         node {
           title
