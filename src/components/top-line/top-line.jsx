@@ -8,7 +8,7 @@ const TopLine = ({ path, parentStyles = {} }) => {
   return (
     <div className={styles.topLine}>
       <div className={parentStyles.container}>
-        <div className={styles.links}>Links</div>
+        {/* <div className={styles.links}>Links</div> */}
         <LanguageSelector path={path} />
       </div>
     </div>
