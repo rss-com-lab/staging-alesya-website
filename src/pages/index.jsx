@@ -1,54 +1,71 @@
 import React from "react";
 import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 
 import Layout from '../components/layout/layout';
-import styles from './index.module.scss';
+import WritingsList from '../components/writings-list/writings-list';
+import WritingBody from '../components/writing-body/writing-body';
+import styles from './writing.module.scss';
 
-const IndexPage = ({ pathContext, i18n, t, data }) => {
-  if (i18n.language !== pathContext.locale) i18n.changeLanguage(pathContext.locale);
+class WrirtingPage extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    
+    const writings = props.data.allContentfulWriting.edges
+      .filter(item => item.node.node_locale === props.pathContext.locale)
+      .map(item => item.node);
 
-  const pageData = data.allContentfulPage.edges
-    .filter(item => item.node.node_locale === pathContext.locale)[0].node;
+    this.state = {
+      writings,
+      writing: writings.length ? writings[0] : null,
+    };
+  }
 
-  const { photo } = pageData;
+  writingChangeHolder(writing) {
+    this.setState({
+      writing,
+    });
+  }
 
-  const photoHTML = `<img src="${photo.resolutions.src}" alt="${photo.title}" />`
+  render () {
+    const { pathContext, i18n } = this.props;
+    const { writings, writing } = this.state;
 
-  console.log(photoHTML);
+    if (i18n.language !== pathContext.locale) i18n.changeLanguage(pathContext.locale);
 
-  return (
-    <Layout path={pathContext.pathname}>
-      <Helmet>
-        <title>{`${pageData.title} – ${t('title')}`}</title>
-      </Helmet>
-      <div 
-        className={styles.wrapper}
-        dangerouslySetInnerHTML={{ __html: photoHTML + pageData.text.childMarkdownRemark.html }}
-      ></div>
+    return <Layout path={pathContext.pathname}>
+      <div className={styles.writingWrapper}>
+        <aside>
+          <WritingsList
+            writings={writings} 
+            writingChangeHolder={writing => this.writingChangeHolder(writing)}
+            writing={writing}
+          />
+        </aside>
+        {this.state.writing && <WritingBody writing={writing}/>}
+      </div>
     </Layout>
-  )
+  }
 }
 
-export default withTranslation('header')(IndexPage);
+export default withTranslation('header')(WrirtingPage);
 
 export const pageQuery = graphql`
   {
-    allContentfulPage {
+    allContentfulWriting(
+      sort: {
+        fields: [date, createdAt]
+        order: DESC
+      }
+    ) {
       edges {
         node {
           title
           node_locale
+          date
           text {
             childMarkdownRemark {
               html
-            }
-          }
-          photo {
-            title
-            resolutions(width: 1600) {
-              src
             }
           }
         }
