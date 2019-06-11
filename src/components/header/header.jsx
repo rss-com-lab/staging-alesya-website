@@ -18,15 +18,15 @@ const Header = ({ parentStyles = {} }) => {
         </h2>
         <nav>
           <ul>
-            <li>
+            {/* <li>
               <LocalizedLink to="/" activeClassName={styles.active}>{t('About me')}</LocalizedLink>
-            </li>
+            </li> */}
             <li>
-              <LocalizedLink to="/writing" activeClassName={styles.active}>{t('Writing')}</LocalizedLink>
+              <LocalizedLink to="/" activeClassName={styles.active}>{t('Writing')}</LocalizedLink>
             </li>
-            <li>
+            {/* <li>
               <LocalizedLink to="/blog" activeClassName={styles.active}>{t('Blog')}</LocalizedLink>
-            </li>
+            </li> */}
             <li>
               <LocalizedLink to="/contact" activeClassName={styles.active}>{t('Contact')}</LocalizedLink>
             </li>
