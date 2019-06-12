@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "stable"
+  - "10"
 cache:
   directories:
   - node_modules
@@ -15,6 +15,5 @@ deploy:
     branch: master
 before_script:
   - "npm i -g gatsby"
-  - "npm i"
 script:
   - "npm run build"
