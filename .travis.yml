@@ -8,9 +8,11 @@ deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
+  committer-from-gh: true
   local_dir: public
   repo: "alesia-ivankova/alesia-ivankova.github.io"
   keep-history: true
+  target-branch: master
   on:
     branch: master
 before_script:
