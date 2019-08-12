@@ -14,7 +14,7 @@ deploy:
   keep-history: true
   target-branch: master
   on:
-    branch: ci-integration
+    branch: master
 before_script:
   - "npm i -g gatsby"
 script:
